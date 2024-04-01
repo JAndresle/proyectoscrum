@@ -1,0 +1,154 @@
+/* Basic reset for padding and margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+.table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+    .table th, .table td {
+        padding: 12px;
+        border: 1px solid #ccc;
+        text-align: left;
+    }
+
+    .table th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .table tr:hover {
+        background-color: #ddd;
+    }
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+    /* Button styles */
+    a.asp-action {
+        display: inline-block;
+        padding: 8px 15px;
+        margin: 5px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+     a.asp-action:hover {
+           background-color: #0056b3;
+        }
+
+/* General link styling */
+.action-link {
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+/* Specific styles for Edit, Details, and Delete actions */
+.edit-action {
+    background-color: #ffc107; /* Amber */
+}
+
+.details-action {
+    background-color: #17a2b8; /* Light blue */
+}
+
+.delete-action {
+    background-color: #dc3545; /* Red */
+}
+
+/* Hover effect for all action links */
+.action-link:hover {
+    opacity: 0.8;
+}
+
+/* General form styling */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+    .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+    }
+
+/* Styling labels for better readability */
+label.control-label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+
+/* Custom button styling */
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }
+
+/* Styling for validation error messages */
+.text-danger {
+    color: #dc3545;
+}
+
+/* Additional styling for the 'Back to List' link */
+.back-to-list {
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+    .back-to-list:hover {
+        text-decoration: underline;
+    }
