@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Jandr\OneDrive\Documentos\GitHub\proyectoscrum\proyectoscrum
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Jandr/OneDrive/Documentos/GitHub/proyectoscrum/proyectoscrum/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jandr/OneDrive/Documentos/GitHub/proyectoscrum/proyectoscrum/Views/Bitacoras/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQml0YWNvcmFzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -330,6 +334,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Jandr/OneDrive/Documentos/GitHub/proyectoscrum/proyectoscrum/Views/Usuarios/Denied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVuaWVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Jandr/OneDrive/Documentos/GitHub/proyectoscrum/proyectoscrum/Views/Usuarios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -340,6 +348,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Jandr/OneDrive/Documentos/GitHub/proyectoscrum/proyectoscrum/Views/Usuarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jandr/OneDrive/Documentos/GitHub/proyectoscrum/proyectoscrum/Views/Usuarios/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Jandr/OneDrive/Documentos/GitHub/proyectoscrum/proyectoscrum/Views/Usuarios/_ResultadosBusquedaRol.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcX1Jlc3VsdGFkb3NCdXNxdWVkYVJvbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Jandr/OneDrive/Documentos/GitHub/proyectoscrum/proyectoscrum/Views/_ViewImports.cshtml]

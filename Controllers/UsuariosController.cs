@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using proyectoscrum.Models;
+
 
 namespace proyectoscrum.Controllers
 {
@@ -17,6 +21,70 @@ namespace proyectoscrum.Controllers
         {
             _context = context;
         }
+
+        
+        // Método para mostrar el formulario de login
+        public IActionResult Login()
+        {
+
+            ClaimsPrincipal claimsUser = HttpContext.User;
+
+            if (claimsUser.Identity.IsAuthenticated)
+                return RedirectToAction("Index", "Home");
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(string Correo, string Contrasenna)
+        {
+            if (string.IsNullOrEmpty(Correo) || string.IsNullOrEmpty(Contrasenna))
+            {
+                ViewBag.Error = "Debe proporcionar un correo y una contraseña.";
+                return View();
+            }
+
+           var usuario = await _context.Usuarios.FirstOrDefaultAsync(p => p.Correo == Correo && p.Contrasenna == Contrasenna);
+
+            if (usuario == null)
+            {
+                ViewBag.Error = "Correo o contraseña inválidos.";
+                return View();
+            }
+
+            var usuarioPerfil = await _context.Usuarios.FirstOrDefaultAsync(p => p.IdUsuario == usuario.IdUsuario);
+
+            var claims = new[] {
+                new Claim(ClaimTypes.NameIdentifier, usuario.IdUsuario.ToString()),
+                new Claim(ClaimTypes.Name, usuario.Nombre),
+                new Claim(ClaimTypes.Name, usuario.Identificacion.ToString()),
+                new Claim(ClaimTypes.Email, usuario.Correo),
+                new Claim(ClaimTypes.Role, usuarioPerfil.IdRol.ToString())
+            };
+
+            ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            AuthenticationProperties properties = new AuthenticationProperties()
+            {
+                AllowRefresh = true,
+                IsPersistent = true
+
+            };
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), properties);
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "Usuarios");
+        }
+
+
+       
 
         // GET: Usuarios
         public async Task<IActionResult> Index()
@@ -65,6 +133,7 @@ namespace proyectoscrum.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["IdRol"] = new SelectList(_context.Roles, "IdRol", "IdRol", usuario.IdRol);
+ 
             return View(usuario);
         }
 

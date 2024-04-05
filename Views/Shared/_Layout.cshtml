@@ -10,66 +10,87 @@
     <link rel="stylesheet" href="~/proyectoscrum.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Proyecto MEP</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item dropdown">
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a></li>      
-                        </li>
+    @using System.Security.Claims
+    @if (User.Identity.IsAuthenticated)
+    {
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container-fluid">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Proyecto MEP</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item dropdown">
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a></li>
+                            </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                               Mantenimiento de Usuarios
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="Index">Roles de Usuario</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Bitacoras" asp-action="Index">Bitácoras</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Mantenimiento de Centros Educativos
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" asp-area="" asp-controller="CentrosEducativoe" asp-action="Index">Centros Educativos</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="TipoCentroes" asp-action="Index">Tipo de Centros Educativos</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Grupos y Materias
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Grupos" asp-action="Index">Grupos</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Materias" asp-action="Index">Materias</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Niveles" asp-action="Index">Niveles</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Mantenimiento de Regiones
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Provincias" asp-action="Index">Provincias</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Cantones" asp-action="Index">Cantones</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-controller="Distritos" asp-action="Index">Distritos</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                            @if (User.IsInRole("1"))
+                            {
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Mantenimiento de Usuarios
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="Index">Roles de Usuario</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Bitacoras" asp-action="Index">Bitácoras</a></li>
+                                </ul>
+                            </li>
+                            }
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Mantenimiento de Centros Educativos
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="CentrosEducativoe" asp-action="Index">Centros Educativos</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="TipoCentroes" asp-action="Index">Tipo de Centros Educativos</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Grupos y Materias
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Grupos" asp-action="Index">Grupos</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Materias" asp-action="Index">Materias</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Niveles" asp-action="Index">Niveles</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Mantenimiento de Regiones
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Provincias" asp-action="Index">Provincias</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Cantones" asp-action="Index">Cantones</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Distritos" asp-action="Index">Distritos</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="navbar-nav ml-auto">
+                        <span class="nav-item nav-link">Nombre: @User.FindFirst(ClaimTypes.Name)?.Value</span>
+                        <span class="nav-item nav-link">|</span>
+                        <span class="nav-item nav-link">Sesión: @User.FindFirst(ClaimTypes.Email)?.Value</span>
+                        <span class="nav-item nav-link">|</span>
+                        <span class="nav-item nav-link">Perfil: @User.FindFirst(ClaimTypes.Role)?.Value</span>
+                        <span class="nav-item nav-link">|</span>
+                        <a class="nav-item nav-link" asp-controller="Usuarios" asp-action="Logout">Cerrar Sesión</a>
+                    </div>
                 </div>
-            </div>
 
 
-        </nav>
-    </header>
+            </nav>
+        </header>
+
+    }
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

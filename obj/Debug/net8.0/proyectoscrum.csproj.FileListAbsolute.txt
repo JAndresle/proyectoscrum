@@ -250,3 +250,4 @@ C:\Users\Jandr\OneDrive\Documentos\GitHub\proyectoscrum\proyectoscrum\bin\Debug\
 C:\Users\Jandr\OneDrive\Documentos\GitHub\proyectoscrum\proyectoscrum\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\Jandr\OneDrive\Documentos\GitHub\proyectoscrum\proyectoscrum\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Jandr\OneDrive\Documentos\GitHub\proyectoscrum\proyectoscrum\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\Jandr\OneDrive\Documentos\GitHub\proyectoscrum\proyectoscrum\obj\Debug\net8.0\proyectoscrum.sourcelink.json

@@ -1,4 +1,4 @@
-﻿@model proyectoscrum.Models.Usuario
+﻿@model proyectoscrum.Models.Usuario;
 
 @{
     ViewData["Title"] = "Create";
@@ -8,6 +8,22 @@
 
 <h4>Usuarios</h4>
 <hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="input-group">
+            <label><b>Consultar Rol:</b></label>
+            <br />
+            <input class="label-size" type="text" id="miTextbox" class="form-control">
+        </div>
+        <br />
+        <div class="input-group-append">
+            <button id="buscar-rol" class="btn btn-consultar btn-style" type="button">Consultar</button>
+        </div>
+        <div id="ventana-emergente"></div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
